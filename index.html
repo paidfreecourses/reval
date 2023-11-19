@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reval - Free Courses Pakistan</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-blue-600 text-white text-center py-4">
-        <h1 class="text-2xl font-bold">Updating in progress</h1> 
+
+<body class="bg-gray-900 text-white">
+    <header class="bg-blue-800 text-white text-center py-4">
+        <!-- <h1 class="text-2xl font-bold">Updating in progress</h1> -->
+
+        <!-- Add the search bar -->
+        <div class="mt-4">
+            <input type="text" id="searchInput" placeholder="Search courses..." class="px-4 py-2 border rounded-md bg-gray-700 text-white">
+            <button onclick="searchCourses()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md ml-2">Search</button>
+        </div>
+
+        <style>
+            /* Add this style to your existing CSS */
+            .grid div {
+                display: block;
+            }
+
+            .mt-4 input {
+                color: white;
+            }
 
 
-    <!-- Add the search bar -->
-    <div class="mt-4">
-        <input type="text"  id="searchInput" placeholder="Search courses..." class=" px-4 py-2 border rounded-md ">
-        <button onclick="searchCourses()" class="bg-blue-800 text-white px-4 py-2 rounded-md ml-2">Search</button>
-    </div>
+            /* Dark theme for cards */
+            .bg-white {
+                background-color: #2d2d2d;
+                color: white;
+            }
+
+            .text-gray-600 {
+                color: #b3b3b3;
+            }
+
+            .bg-blue-600 {
+                background-color: #3182ce;
+            }
+
+            .hover\:bg-blue-700:hover {
+                background-color: #2c5282;
+            }
 
 
 
-    
 
 
-
-
-
-    <style>
-        /* Add this style to your existing CSS */
-.grid  div {
-    display: block;
-}
-
-.mt-4 input {
-    color: black;
-}
-
-    </style>
-
-
+        </style>
 
     </header>
 
-
-
     <main class="container mx-auto my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Card 1 - Free Course -->
+        
+        <!-- Cards (Courses) -->
+
+
+
+
+
+
 
 
         <div class="bg-white rounded-lg shadow-md p-4">
@@ -179,39 +198,52 @@
         </div>
 
 
-    
-    
-    
+
+        <div class="bg-white rounded-lg shadow-md p-4">
+            <img src="https://media.licdn.com/dms/image/C4D0BAQHCgjEml0MDmw/company-logo_200_200/0/1651257314523?e=2147483647&v=beta&t=0guHwJz9WpGKFtNsxKiMuWJ176YpxvGnAieNc195lDk" alt="Course 2" class="w-full h-48 object-cover">
+            <h2 class="text-xl font-semibold my-2">Lets Uncover Fiver </h2>
+            <p class="text-gray-600">Lets Uncover Fiver Methodology Paid Course </p>
+            <button class="bg-blue-600 text-white py-2 px-4 rounded-full mt-4 hover:bg-blue-700"> <a href="https://drive.google.com/drive/folders/195vyEkWODcz_89GuqqSLGk4pSRnOeH6J?usp=sharing">Click Download</a> </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Add your existing card styles here -->
+
     </main>
 
-
-
-
-
-<!-- Footer -->
-<footer class="bg-gray-800 text-white text-center py-4">
-    <p class="text-sm">&copy; 2023 Reval - Free Courses Pakistan. All rights reserved.</p>
-    <p class="text-sm">Get premium things for free!</p>
-    <a href="premium.html" class="text-blue-400 underline">Explore Now</a>
-</footer>
-
-
-
-
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p class="text-sm">&copy; 2023 Reval - Free Courses Pakistan. All rights reserved.</p>
+        <p class="text-sm">Get premium things for free!</p>
+        <a href="premium.html" class="text-blue-400 underline">Explore Now</a>
+    </footer>
 
     <script>
         function searchCourses() {
             // Get the search input value
             var searchValue = document.getElementById('searchInput').value.toLowerCase();
-    
+
             // Get all the card titles (H2 elements)
             var cardTitles = document.querySelectorAll('.grid > div > h2');
-    
+
             // Loop through each card title and hide/show based on the search input
             cardTitles.forEach(function (title) {
                 var cardText = title.textContent.toLowerCase();
                 var card = title.closest('div');
-    
+
                 if (cardText.includes(searchValue)) {
                     card.style.display = 'block';
                 } else {
@@ -220,14 +252,7 @@
             });
         }
     </script>
-    
-
-
-
-
-
-
-
 
 </body>
+
 </html>
